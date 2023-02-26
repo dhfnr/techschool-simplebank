@@ -22,5 +22,8 @@ migrate_drop:
 migrate_version:
 	@migrate -path $(MIGRATION_PATH) -database "$(DB_CONN)" version 
 
+sqlc:
+	sqlc generate
+
 
 .PHONY: migrate_create migrate_up migrate_down migrate_drop migrate_version
