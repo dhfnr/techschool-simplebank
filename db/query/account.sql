@@ -21,10 +21,11 @@ ORDER BY id
 LIMIT sqlc.arg('limit')
 OFFSET sqlc.arg('offset');
 
--- name: UpdateAccount :exec
+-- name: UpdateAccount :one
 UPDATE accounts
 SET balance = sqlc.arg('balance')
-WHERE id = sqlc.arg('id');
+WHERE id = sqlc.arg('id')
+RETURNING *;
 
 -- name: DeleteAccount :exec
 DELETE FROM accounts 
