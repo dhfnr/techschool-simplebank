@@ -25,5 +25,8 @@ migrate_version:
 sqlc:
 	sqlc generate
 
+test:
+	go test -v -cover ./...
+
 
 .PHONY: migrate_create migrate_up migrate_down migrate_drop migrate_version
